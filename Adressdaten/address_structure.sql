@@ -1,18 +1,18 @@
 CREATE DATABASE videothek_neu;
 USE videothek_neu;
--- 1. Tabelle: Sprache
+
 CREATE TABLE Sprache (
     id_Sprache INT AUTO_INCREMENT PRIMARY KEY,
     Bezeichnung VARCHAR(50) NOT NULL
 );
 
--- 2. Tabelle: Kanton
+
 CREATE TABLE Kanton (
     id_Kanton INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50) NOT NULL
 );
 
--- 3. Tabelle: Ort
+
 CREATE TABLE Ort (
     id_Ort INT AUTO_INCREMENT PRIMARY KEY,
     PLZ INT NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Ort (
     FOREIGN KEY (fs_Kanton) REFERENCES Kanton(id_Kanton)
 );
 
--- 4. Tabelle: Strasse
+
 CREATE TABLE Strasse (
     id_Strasse INT AUTO_INCREMENT PRIMARY KEY,
     Bezeichnung_Abkuerzung VARCHAR(100),
@@ -29,7 +29,7 @@ CREATE TABLE Strasse (
     Lokationstyp ENUM('Strasse', 'Gebaeude') NOT NULL
 );
 
--- 5. Tabelle: Adresse
+
 CREATE TABLE Adresse (
     id_Adresse INT AUTO_INCREMENT PRIMARY KEY,
     fs_Strasse INT,
@@ -39,7 +39,7 @@ CREATE TABLE Adresse (
     FOREIGN KEY (fs_Ort) REFERENCES Ort(id_Ort)
 );
 
--- 6. Tabelle: Kunde (normalisiert)
+
 CREATE TABLE Kunde (
     id_Kunde INT AUTO_INCREMENT PRIMARY KEY,
     Anrede ENUM('Herr', 'Frau') NOT NULL,

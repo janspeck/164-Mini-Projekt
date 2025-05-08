@@ -1,5 +1,5 @@
 /*
-Autor: Deon Ramadani
+Autor: Jan Speck
 Datum: 12.02.2025
 DB. videothek
 */
